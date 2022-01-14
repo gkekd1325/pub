@@ -1,0 +1,171 @@
+@charset "utf-8";
+
+*{margin: 0; padding: 0;}
+.cf:after{content: ""; display: block; clear: both;}
+#wrap{
+    width: 1200px;
+    margin: 0 auto;
+    height: 700px;
+    
+}
+img{display: block; border: 0;}
+li{list-style: none;}
+a{
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+header{
+    height: 100px;
+    
+}
+#slide{
+    overflow: hidden;
+    height: 300px;
+}
+#content{
+    height: 200px;
+    background: cyan;
+}
+footer{
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    background: dodgerblue;
+}
+.logo{
+    width: 200px;
+    padding: 30px 0;
+    float: left;
+    background: lightblue;
+   
+}
+nav{
+    background: lightskyblue;
+    width: 1000px;
+    height: 100px;
+    float: left;
+    
+}
+.menu{
+    width: 600px;
+    position: relative;
+    top: 30px;
+    left: 380px;
+    z-index: 1;
+}
+.menu>li{
+    width: 150px;
+    float: left;
+}
+.menu li a{
+    background: lime;
+    text-align: center;
+    transition: 0.3s;
+    line-height: 40px;
+    
+}
+.sub{
+    display: none;   
+    
+}
+.sub li a{
+    background: limegreen;
+}
+/* .menu:hover .sub{ 
+    display: block;
+   
+}*/
+.menu li:hover>a{background: yellow;} /* 속한 앵커의 색을 바꿈 */
+
+#slide ul{
+    animation: slide 9s infinite;
+}
+
+@keyframes slide{
+    0%{margin-top: 0;}
+    33%{margin-top: -300px;}
+    66%{margin-top: -600px;}
+    100%{margin-top: -900px;}
+}
+section{
+    width: 380px;
+    height: 180px;
+    padding: 10px;
+    float: left;
+    
+}
+.tab a{
+    width: 120px;
+    line-height: 40px;
+    text-align: center;
+    background: slateblue;
+    transition: 0.3s;
+}
+.tab a:hover{
+    background: gold;
+}
+.tab>li{
+    float: left;
+}
+.notice a{
+    line-height: 35px;
+    background: slateblue;
+    transition: 0.6s;
+    padding: 0 10px;
+
+    white-space: nowrap; /* 쌓지 말라 한줄로*/
+    overflow: hidden;
+    text-overflow: ellipsis; /* ...표시 */
+}
+.notice a:hover{
+    background: gold;
+}
+
+.gallery li{
+    float: left;
+    padding: 20px 0 20px 20px;
+}
+.gallery{
+    background: slateblue;
+    display: none;
+
+}
+.gallery a:hover{
+    opacity: .6;
+}
+#popup{
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: none;
+}
+.popup_body{
+    width: 600px;
+    height: 400px;
+    background: lightgrey;
+    border: 3px royalblue solid;
+    border-radius: 10px;
+    position: absolute;
+    top:calc(50% - 200px) ;
+    left: calc(50% - 300px);
+    text-align: center;
+}
+
+.popup_body h3{
+    line-height: 80px;
+    font-size: 32px;
+}
+.popup_body p{
+    height: 260px;
+    padding: 0 20px;
+    text-align: left;
+}
+.close{
+    width: 100px;
+    line-height: 40px;
+}
