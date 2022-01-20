@@ -1,0 +1,250 @@
+@charset "utf-8";
+
+*{margin: 0; padding: 0;}
+.cf:after{content: ""; clear: both; display: block;}
+#wrap{
+    width: 1200px;
+    margin: 0 auto;
+    background: ivory;
+}
+img{display: block; border: 0;}
+li{list-style: none;}
+a{
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+/* header */
+
+header{
+    height: 100px;
+}
+.logo{
+    background: lightblue;
+    width: 200px;
+    padding: 30px 0;
+    float: left;
+}
+nav{
+    background: lightskyblue;
+    width: 1000px;
+    height: 100px;
+    float: left;
+    position: relative;
+}
+.menu{
+    position: relative;
+    top:30px;
+    left: 380px;
+    width: 600px;
+    z-index: 2;
+}
+.menu li{
+    width: 150px;
+    float: left;
+}
+.menu li a{
+    background: lime;
+    text-align: center;
+    transition: 0.6s;
+    line-height: 40px;
+}
+.menu li:hover>a{background: yellow;}
+.menu a:hover{
+    background: yellow;
+}
+footer{
+    height: 100px;
+    background: royalblue;
+    line-height: 100px;
+    text-align: center;
+}
+#content{
+    
+    height: 200px;
+}
+/* slide */
+
+#slide{
+    height: 300px;
+    
+    overflow: hidden;
+}
+#slide ul{
+    animation: slide 9s infinite;
+}
+@keyframes slide{
+    0%{margin-top: 0; opacity: 0;}
+    5%{margin-top: 0; opacity: 1;}
+    28%{margin-top: 0; opacity: 1;}
+    33%{margin-top: 0; opacity: 0;}
+    33.3333%{margin-top: -300px; opacity: 0;}
+    38%{margin-top: -300px; opacity: 1;}
+    61%{margin-top: -300px; opacity: 1;}
+    66%{margin-top: -300px; opacity: 0;}
+    66.6666%{margin-top: -600px; opacity: 0;}
+    71%{margin-top: -600px; opacity: 1;}
+    95%{margin-top: -600px; opacity: 1;}
+    100%{margin-top: -600px; opacity: 0;}
+}
+.sub{
+    display: none;
+}
+.sub li a{
+    background: limegreen;
+}
+/* content */
+
+section{
+    width: 380px;
+    height: 180px;
+    padding: 10px;
+    float: left;
+    background: cyan;
+}
+#content .tab a{
+    width: 150px;
+    transition: 0.6s; 
+    background: powderblue;
+    text-align: center;
+    line-height: 40px;
+    
+}
+#content .tab li{float: left;}
+
+
+#content .tab a.on{
+    background:dodgerblue;
+}
+#content .notice a:hover{background: gold;}
+#content .notice a{
+    padding:0 10px;
+    line-height: 35px;
+    background: dodgerblue;
+    transition: 0.6s;
+    height: 35px;
+}
+#content .notice span{
+    display: block;
+    float: left;
+}
+#content .notice span:nth-child(1){
+    /* background: coral; */
+    width: 240px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+#content .notice span:nth-child(2){
+    /* background: coral; */
+    width: 120px;
+    text-align: right;
+}
+#content .gallery{
+    background: dodgerblue;
+    display: none;
+}
+#content .gallery li{
+    float: left;
+    padding: 20px 0 20px 20px;
+}
+#content .gallery img{
+    width: 100px;
+}
+#content .gallery a{transition: 0.6s;}
+#content .gallery a:hover{
+    opacity: .6;
+}
+#popup{
+    background: rgba(0, 0, 0, .5);
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    display: none;
+}
+.popup_body{
+    background: white;
+    border: 2px solid blue;
+    border-radius: 10px;
+    width: 600px;
+    height: 400px;
+    text-align: center;
+    padding: 0 10px;
+    position: relative;
+    top: calc(50% - 200px);
+    left: calc(50% - 300px);
+
+}
+.popup_body h3{
+    line-height: 80px;
+    font-size: 1.3rem;
+}
+.popup_body p{
+    height: 260px;
+    line-height: 30px;
+    text-align: left;
+}
+.close{
+    width: 120px;
+    line-height: 40px;
+}
+.banner{
+    width: 380px;
+    height: 180px;
+    background: url("../img/credit-card1.png") no-repeat; /* 이미지를 반복하지 않음(없으면이미지반복)*/
+    background-size: 65%;
+    background-position: center;
+    transition: 0.3s;
+}
+.banner:hover{opacity: .6;}
+
+.banner .text{
+    position: relative;
+    top: 110px;
+    left: 75px;
+    font-size: 13px;
+    color: white;
+}
+#content .shotcut li{
+    float: left;
+    padding: 30px 0 30px 20px;
+}
+#content .shotcut img{
+    width: 100px;
+}
+#content .shotcut h3{
+    text-align: center;
+    font-size: 13px;
+    line-height: 20px;
+    color: #333;
+}
+.shotcut a{
+    transition: 0.3s;
+}
+.shotcut a:hover{
+    opacity: .6;
+}
+/* footer */
+.copyright{
+    text-align: center;
+    width: 800px;
+    line-height: 20px;
+    padding: 20px 0;
+    float: left;
+    color: white;
+}
+.sns{
+    width: 200px;
+    height: 100px;
+    float: left;
+    background: slateblue;
+}
+.sns select{
+    
+    width: 120px;
+    height: 30px;
+    text-align: center;
+}
