@@ -1,171 +1,250 @@
 @charset "utf-8";
 
 *{margin: 0; padding: 0;}
-.cf:after{content: ""; display: block; clear: both;}
+.cf:after{content: ""; clear: both; display: block;}
 #wrap{
     width: 1200px;
     margin: 0 auto;
-    height: 700px;
-    
+    background: ivory;
 }
 img{display: block; border: 0;}
 li{list-style: none;}
 a{
-    display: block;
     text-decoration: none;
+    display: block;
     color: inherit;
 }
+/* header */
+
 header{
     height: 100px;
-    
-}
-#slide{
-    overflow: hidden;
-    height: 300px;
-}
-#content{
-    height: 200px;
-    background: cyan;
-}
-footer{
-    height: 100px;
-    text-align: center;
-    line-height: 100px;
-    background: dodgerblue;
 }
 .logo{
+    background: lightblue;
     width: 200px;
     padding: 30px 0;
     float: left;
-    background: lightblue;
-   
 }
 nav{
     background: lightskyblue;
     width: 1000px;
     height: 100px;
     float: left;
-    
+    position: relative;
 }
 .menu{
-    width: 600px;
     position: relative;
-    top: 30px;
+    top:30px;
     left: 380px;
-    z-index: 1;
+    width: 600px;
+    z-index: 2;
 }
-.menu>li{
+.menu li{
     width: 150px;
     float: left;
 }
 .menu li a{
     background: lime;
     text-align: center;
-    transition: 0.3s;
+    transition: 0.6s;
     line-height: 40px;
+}
+.menu li:hover>a{background: yellow;}
+.menu a:hover{
+    background: yellow;
+}
+footer{
+    height: 100px;
+    background: royalblue;
+    line-height: 100px;
+    text-align: center;
+}
+#content{
     
+    height: 200px;
+}
+/* slide */
+
+#slide{
+    height: 300px;
+    
+    overflow: hidden;
+}
+#slide ul{
+    animation: slide 9s infinite;
+}
+@keyframes slide{
+    0%{margin-top: 0; opacity: 0;}
+    5%{margin-top: 0; opacity: 1;}
+    28%{margin-top: 0; opacity: 1;}
+    33%{margin-top: 0; opacity: 0;}
+    33.3333%{margin-top: -300px; opacity: 0;}
+    38%{margin-top: -300px; opacity: 1;}
+    61%{margin-top: -300px; opacity: 1;}
+    66%{margin-top: -300px; opacity: 0;}
+    66.6666%{margin-top: -600px; opacity: 0;}
+    71%{margin-top: -600px; opacity: 1;}
+    95%{margin-top: -600px; opacity: 1;}
+    100%{margin-top: -600px; opacity: 0;}
 }
 .sub{
-    display: none;   
-    
+    display: none;
 }
 .sub li a{
     background: limegreen;
 }
-/* .menu:hover .sub{ 
-    display: block;
-   
-}*/
-.menu li:hover>a{background: yellow;} /* 속한 앵커의 색을 바꿈 */
+/* content */
 
-#slide ul{
-    animation: slide 9s infinite;
-}
-
-@keyframes slide{
-    0%{margin-top: 0;}
-    33%{margin-top: -300px;}
-    66%{margin-top: -600px;}
-    100%{margin-top: -900px;}
-}
 section{
     width: 380px;
     height: 180px;
     padding: 10px;
     float: left;
+    background: cyan;
+}
+#content .tab a{
+    width: 150px;
+    transition: 0.6s; 
+    background: powderblue;
+    text-align: center;
+    line-height: 40px;
     
 }
-.tab a{
-    width: 120px;
-    line-height: 40px;
-    text-align: center;
-    background: slateblue;
-    transition: 0.3s;
+#content .tab li{float: left;}
+
+
+#content .tab a.on{
+    background:dodgerblue;
 }
-.tab a:hover{
-    background: gold;
+#content .notice a:hover{background: gold;}
+#content .notice a{
+    padding:0 10px;
+    line-height: 35px;
+    background: dodgerblue;
+    transition: 0.6s;
+    height: 35px;
 }
-.tab>li{
+#content .notice span{
+    display: block;
     float: left;
 }
-.notice a{
-    line-height: 35px;
-    background: slateblue;
-    transition: 0.6s;
-    padding: 0 10px;
-
-    white-space: nowrap; /* 쌓지 말라 한줄로*/
+#content .notice span:nth-child(1){
+    /* background: coral; */
+    width: 240px;
     overflow: hidden;
-    text-overflow: ellipsis; /* ...표시 */
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
-.notice a:hover{
-    background: gold;
+#content .notice span:nth-child(2){
+    /* background: coral; */
+    width: 120px;
+    text-align: right;
 }
-
-.gallery li{
+#content .gallery{
+    background: dodgerblue;
+    display: none;
+}
+#content .gallery li{
     float: left;
     padding: 20px 0 20px 20px;
 }
-.gallery{
-    background: slateblue;
-    display: none;
-
+#content .gallery img{
+    width: 100px;
 }
-.gallery a:hover{
+#content .gallery a{transition: 0.6s;}
+#content .gallery a:hover{
     opacity: .6;
 }
 #popup{
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, .6);
+    background: rgba(0, 0, 0, .5);
     position: absolute;
+    width: 100%;
+    height: 100vh;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 4;
     display: none;
 }
 .popup_body{
+    background: white;
+    border: 2px solid blue;
+    border-radius: 10px;
     width: 600px;
     height: 400px;
-    background: lightgrey;
-    border: 3px royalblue solid;
-    border-radius: 10px;
-    position: absolute;
-    top:calc(50% - 200px) ;
-    left: calc(50% - 300px);
     text-align: center;
-}
+    padding: 0 10px;
+    position: relative;
+    top: calc(50% - 200px);
+    left: calc(50% - 300px);
 
+}
 .popup_body h3{
     line-height: 80px;
-    font-size: 32px;
+    font-size: 1.3rem;
 }
 .popup_body p{
     height: 260px;
-    padding: 0 20px;
+    line-height: 30px;
     text-align: left;
 }
 .close{
-    width: 100px;
+    width: 120px;
     line-height: 40px;
+}
+.banner{
+    width: 380px;
+    height: 180px;
+    background: url("../img/credit-card1.png") no-repeat; /* 이미지를 반복하지 않음(없으면이미지반복)*/
+    background-size: 65%;
+    background-position: center;
+    transition: 0.3s;
+}
+.banner:hover{opacity: .6;}
+
+.banner .text{
+    position: relative;
+    top: 110px;
+    left: 75px;
+    font-size: 13px;
+    color: white;
+}
+#content .shotcut li{
+    float: left;
+    padding: 30px 0 30px 20px;
+}
+#content .shotcut img{
+    width: 100px;
+}
+#content .shotcut h3{
+    text-align: center;
+    font-size: 13px;
+    line-height: 20px;
+    color: #333;
+}
+.shotcut a{
+    transition: 0.3s;
+}
+.shotcut a:hover{
+    opacity: .6;
+}
+/* footer */
+.copyright{
+    text-align: center;
+    width: 800px;
+    line-height: 20px;
+    padding: 20px 0;
+    float: left;
+    color: white;
+}
+.sns{
+    width: 200px;
+    height: 100px;
+    float: left;
+    background: slateblue;
+}
+.sns select{
+    
+    width: 120px;
+    height: 30px;
+    text-align: center;
 }

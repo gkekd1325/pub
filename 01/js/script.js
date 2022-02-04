@@ -6,29 +6,31 @@ $(".menu").hover(
         $(".sub").stop().slideUp();
     }
 );
-
-$(".tab1").click(
+$(".tab li:eq(0)").click(
     function(){
+        // $("body").css("background", "black");
+        $(".tab li a").removeClass("on");
+        $(".tab li:eq(0) a").addClass("on"); /* on을 싹다 없애고 첫놈만 on */
         $(".notice").show();
         $(".gallery").hide();
     }
-);
-$(".tab2").click(
+)
+$(".tab li:eq(1)").click(
     function(){
-        $(".gallery").show();
+        // $("body").css("background", "white");
+        $(".tab li a").removeClass("on");
+        $(".tab li:eq(1) a").addClass("on");
         $(".notice").hide();
+        $(".gallery").show();
     }
-);
-
-$(".open").click(
+)
+$(".notice li:eq(0)").click(
     function(){
-        // $("#popup").show();
         $("#popup").fadeIn();
     }
 );
 $(".close").click(
     function(){
-        // $("#popup").hide();
         $("#popup").fadeOut();
     }
 );
