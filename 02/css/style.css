@@ -2,86 +2,88 @@
 
 *{margin: 0; padding: 0;}
 .cf:after{content: ""; display: block; clear: both;}
-img{display: block; border: 0;}
+
+#wrap{
+    width: 1200px;
+    margin: 0 auto;
+    
+    height: 700px;
+}
 li{list-style: none;}
 a{
     text-decoration: none;
     color: inherit;
     display: block;
 }
-#wrap{
-    width: 1200px;
-    margin: 0 auto;
-    position: relative;
-}
+img{display: block; border: 0;}
+
 /* header */
-header{
-    height: 100px;
-    
-}
+
 .logo{
-    background: lightcyan;
+    width: 200px;
     padding: 30px 0;
+    background: lightblue;
     float: left;
 }
 nav{
-    background: lightblue;
-    height: 100px;
-    float: left;
     width: 1000px;
-    position: relative;
-}
-.nav_back{
-    width: 1200px;
-    height: 200px;
-    background: lightgreen;
-    position: absolute;
-    z-index: 1;
-    top: 100px;
-    left: 0;
-    display: none;
+    float: left;
+    background: lightcyan;
+    height: 100px;
 }
 .menu{
     position: relative;
     top: 60px;
     left: 380px;
-    z-index: 4;
     width: 600px;
+    z-index: 2;
 }
-.menu>li{
+.menu li{
     width: 150px;
     float: left;
 }
 .menu a{
-    text-align: center;
-    line-height: 40px;
     background: lime;
+    line-height: 40px;
+    text-align: center;
     transition: 0.3s;
-
-    /* animation: updown .6s infinite; */
 }
-/* @keyframes updown {
-    50%{margin-top: -20px;}
-} */
-.menu li:hover > a{background: yellow;}
-.sub{display: none;}
+/* .menu li:hover >a{background: yellow;} */
+.menu>li:hover>a{
+    background: yellow;
+}
+.sub>li:hover>a{
+    background: coral;
+} /* 메뉴와 서브의 호버 색을 다르게 지정 */
+.sub{
+    display: none;
+    
+}
 .sub a{
     background: limegreen;
-
+}
+header{
+    position: relative; /* nav_back을 감싸준다. */
+}
+.nav_back{
+    background: chartreuse;
+    height: 150px;
+    z-index: 1;
+    display: none;
+    position: absolute;
+    top: 100px;
+    width: 100%;
 }
 /* slide */
 #slide{
     height: 300px;
-    background: snow;
     overflow: hidden;
 }
 #slide ul{
     width: 4800px;
     animation: slide 9s infinite;
 }
-#slide li{
-    float: left;
-}
+#slide li{float: left;}
 @keyframes slide{
     0%{margin-left: 0;}
     33%{margin-left: -1200px;}
@@ -89,153 +91,86 @@ nav{
     100%{margin-left: -3600px;}
 }
 /* content */
-#content{
-    height: 200px;
-    background: thistle;
-}
+#content{height: 200px;}
+
 section{
+    padding: 10px;
     width: 380px;
     height: 180px;
-    padding: 10px;
     float: left;
-    background: cyan;
+    background:turquoise;
 }
-/* section1 */
 .tap li{
+    float: left;
     width: 150px;
+}
+.tap a{
+    background: skyblue;
+    text-align: center;
+    line-height: 30px;
+}
+.notice{
+    background: dodgerblue;
     float: left;
     
 }
-.tap a{
-    text-align: center;
-    line-height: 35px;
-    background: lightskyblue;
-    transition: 0.3s;
-}
-.tap a.on{background: dodgerblue;}
-
-
-.tap a:hover{background: gold;}
-.notice{
-    background: dodgerblue;
-}
 .notice a{
-    height: 35px;
-    line-height: 35px;
-    padding: 0 10px;
-    transition: 0.3s;
-}
-.notice span{
-    float: left;
-}
-.notice a span:nth-child(1){
-    width: 240px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-.notice a span:nth-child(2){
-    width: 120px;
-    text-align: right;
+    transition:0.3s;
+    height: 25px;
+    padding: 0 5px;
+    line-height: 25px;
 }
 .notice a:hover{background: gold;}
-
+.notice span{
+    float: left;
+    
+    display: block;
+}
+.notice span:nth-child(1){
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: calc(250px - 10px);
+}
+.notice span:nth-child(2){
+    text-align: right;
+    width: calc(130px - 10px);
+}
+.gallery img{
+    width: 100px;
+    padding: 30px 10px;
+}
 .gallery{
-    background: dodgerblue;
-    display: none;
+    background: aqua;
+    float: left;
+    
 }
 .gallery li{
     float: left;
-    padding: 20px 0 20px 20px;
+   
 }
-.gallery a{transition: 0.3s;}
-.gallery a img{
-    width: 100px;
+.gallery a{
+    transition: 0.3s;
 }
-.gallery a:hover{
-    opacity: .6;
-}
-/* section2 */
-.banner{
-    background: url("../img/credit-card1.png") no-repeat;
-    background-size: 65%;
+.gallery a:hover{opacity: .6;}
+.title{
     width: 380px;
-    height: 180px;
-    position: relative;
-    background-position: center;
-}
-.banner {transition: 0.3s;}
-.banner:hover{opacity: .6;}
-.text{
-    position: relative;
-    top: 110px;
-    left: 90px;
-    font-size: 13px;
-    color: white;
-}
-.shotcut li{
-    float: left;
-    padding: 30px 0 30px 20px;
-    text-align: center;
     line-height: 40px;
+    text-align: center;
+    border-bottom: 1px solid gray;
 }
-.shotcut img{
+.banner_img img{
     width: 100px;
 }
-#popup{
-    background:rgba(0, 0, 0, .6);
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: none;
-}
-.pop_body{
-    width: 600px;
-    height: 400px;
-    border: 2px solid blue;
-    border-radius: 10px;
-    background: white;
-    text-align: center;
-    position: relative;
-    top: calc(50% - 200px);
-    left: calc(50% - 300px);
-    
-}
-.pop_body h3{line-height: 40px;}
-.pop_body p{
-    text-align: left;
-    padding: 0 10px;
-    height: 200px;
-    line-height: 30px;
-}
-.close{
-    width: 120px;
-    line-height: 40px;
-}
-footer{
-    height: 100px;
-    background: royalblue;
-    text-align: center;
-}
-.copyright{
-    width: 800px;
-    text-align: center;
-    line-height: 30px;
-    color: white;
+.banner_img{
+    width: 100px; height: 100px;
+    padding: 20px;
     float: left;
 }
-.sns{
-    width: 200px;
-    background:cornflowerblue;
+.banner_text{
+    width: calc(240px - 20px);
+    height: calc(140px - 20px);
     float: left;
-    height: 100px;
+    padding: 20px;
 }
-.sns select{
-    width: 120px;
-    height: 30px;
-    text-align: center;
-    position: relative;
-    top: 30px;
-}
+footer{height: 100px; background: royalblue;}
