@@ -2,7 +2,7 @@
 
 *{margin: 0; padding: 0;}
 .cf:after{content: ""; display: block; clear: both;}
-
+body{color: #333;}
 #wrap{
     width: 1200px;
     margin: 0 auto;
@@ -117,7 +117,7 @@ section{
 .notice a{
     transition:0.3s;
     height: 25px;
-    padding: 0 5px;
+    padding: 0 10px; /* 380 - 20 */
     line-height: 25px;
 }
 .notice a:hover{background: gold;}
@@ -130,12 +130,25 @@ section{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: calc(250px - 10px);
+    width: calc(260px - 20px);
 }
 .notice span:nth-child(2){
     text-align: right;
-    width: calc(130px - 10px);
+    width: calc(120px - 20px);
 }
+/* .subject{
+    width: 260px;
+    float: left;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.date{
+    width: 100px;
+    float: left;
+    text-align: right;
+}  span 안쓰고 변수로 지정 시*/
 .gallery img{
     width: 100px;
     padding: 30px 10px;
@@ -147,7 +160,6 @@ section{
 }
 .gallery li{
     float: left;
-   
 }
 .gallery a{
     transition: 0.3s;
@@ -168,9 +180,82 @@ section{
     float: left;
 }
 .banner_text{
-    width: calc(240px - 20px);
-    height: calc(140px - 20px);
+    width: calc(240px - 40px);
+    height: calc(140px - 40px);
     float: left;
     padding: 20px;
+}
+.banner:hover{background: steelblue;}
+.donate{
+    text-align: center;
+    line-height: 40px;
+}
+.donate:hover{
+    
+    color: gold;
+    font-weight: bold;
+}
+.copyright{
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+    width: 800px;
+    float: left;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.family{
+    width: 200px;
+    background: royalblue;
+    float: left;
+    /* height: 100px; */
+    text-align: center;
+    padding: 35px 0;
+}
+.family select{
+    width: 120px;
+    text-align: center;
+    
+    height: 30px;
+}
+#popup{
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, .6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: none;
+}
+.pop{
+    background: white;
+    border: 2px solid blue;
+    border-radius: 15px;
+    width: 600px;
+    height: 400px;
+    position: relative;
+    /* top: calc(50% - 200px);
+    left: calc(50% - 300px); */
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    padding: 0 10px;
+    transform: translate(-50%, -50%);
+}
+.pop h3{
+    padding-top: 20px;
+    text-align: left;
+}
+.close{
+    width: 120px;
+    line-height: 30px;
+}
+.pop p{
+    
+    text-align: left;
+    height: 200px;
+    font-size: 15px;
 }
 footer{height: 100px; background: royalblue;}
