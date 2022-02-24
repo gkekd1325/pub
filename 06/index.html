@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대한투어</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <header>
+        <div id="header">
+            <div class="logo">
+                <a href="#"><img src="img/logo.png" alt="로고"></a>
+            </div>
+            <nav>      <!-- ul.menu>(li>a[href="#"]+ul.sub>(li>a[href="#"])*4)*4 -->
+                <ul class="menu cf">
+                    <li>
+                        <a href="#">해외여행</a>
+                        <ul class="sub">
+                            <li><a href="#">동남아/대만</a></li>
+                            <li><a href="#">중국/홍콩</a></li>
+                            <li><a href="#">유럽/두바이</a></li>
+                            <li><a href="#">미주/하와이</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">국내여행</a>
+                        <ul class="sub">
+                            <li><a href="#">서울/경기권</a></li>
+                            <li><a href="#">충청권</a></li>
+                            <li><a href="#">전라권</a></li>
+                            <li><a href="#">경상/강원권</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">제주도</a>
+                        <ul class="sub">
+                            <li><a href="#">버스여행</a></li>
+                            <li><a href="#">자유여행</a></li>
+                            <li><a href="#">호텔/펜션</a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">렌터카</a>
+                        <ul class="sub">
+                            <li><a href="#">국내 렌터카</a></li>
+                            <li><a href="#">국외 렌터카</a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="nav_back"></div>
+        </div>
+    </header>
+    <div id="slide">
+        <ul>
+            <li><a href="#"><img src="img/slide1.jpg" alt="슬라이드"></a></li>
+            <li><a href="#"><img src="img/slide2.jpg" alt="슬라이드"></a></li>
+            <li><a href="#"><img src="img/slide3.jpg" alt="슬라이드"></a></li>
+        </ul>
+    </div>
+    <div id="content" class="cf">
+        <section>
+            <h3>공지사항</h3>
+            <ul class="notice">
+                <li>
+                    <a href="#">
+                        <div class="list">전자증권 전환 대상 주주 보호 및 조치사항 안내</div>
+                        <div class="date">2019.07.02</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="list">개인정보 처리방침 개정 안내</div>
+                        <div class="date">2019.04.18</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="list">주식회사 모두투어네트워크 결산공고	</div>
+                        <div class="date">2019.03.22</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="list">개인정보처리방침 개정안내</div>
+                        <div class="date">2019.03.12</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="list">제30기 주주총회소집공고</div>
+                        <div class="date">2019.03.04</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="list">2019 여행박람회 전시/운영 대행사 입찰 공고</div>
+                        <div class="date">2019.01.03</div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h3>갤러리</h3>
+            <ul class="gallery cf">
+                <li><a href="#"><img src="img/gallery01.jpg" alt="갤러리">
+                    <a href="https://www.naver.com/" class="ht" target="_blink">naver</a>
+                    <a href="https://www.daum.net/" class="daum" target="_blink">daum</a>
+                    <a href="https://www.google.co.kr/" class="google" target="_blink">google</a>
+                </a></li>
+                <li><a href="#"><img src="img/gallery02.jpg" alt="갤러리">
+                    <a href="#" class="ht">asdawd</a>
+                </a></li>
+                <li><a href="#"><img src="img/gallery03.jpg" alt="갤러리">
+                    <a href="#" class="ht">asdawd</a>
+                </a></li>
+            </ul>
+        </section>
+        <section>
+            <h3>바로가기</h3>
+            <ul class="shotcut cf">
+                <li><a href="#"><img src="img/camera.png" alt="갤러리">
+                    <span>항공권 예약</span>
+                </a></li>
+                <li><a href="#"><img src="img/suitcase.png" alt="갤러리">
+                    <span>호텔 예약</span>
+                </a></li>
+                <li><a href="#"><img src="img/globe.png" alt="갤러리">
+                    <span>유럽/일본 철도예약</span>
+                </a></li>
+            </ul>
+        </section>
+    </div>
+    <footer>
+        <div id="footer">
+            <div class="copyright">
+                (주)대한투어 | 대표 : 강희찬 | 개인정보관리 책임자 : 민준현 | 사업자 등록번호 : 202-81-45295 | <br>
+                통신판매업신고번호 : 중구 제03500호 | 관광사업자 등록번호 : 1989-04(서울특별시 중구) | <br>
+                고객센터 : 1544-5252 | FAX : 02-2021-7800 | 주소 : 서울특별시 중구 을지로 16 승천빌딩 3층 <br>
+                COPYRIGHT 1989-2019 DAEHANTOUR. ALL RIGHTS RESERVED.
+
+            </div>
+            <div class="f_right">
+                <div class="sns">
+                    <a href="#"><img src="img/facebook.png" alt="페북"></a><a href="#"><img src="img/instagram.png" alt="인스타"></a><a href="#"><img src="img/twitter-sign.png" alt="트위터"></a>
+                </div>
+                <div class="family">
+                    <select name="family" id="fa">
+                        <option value="">대한보증보험</option>
+                        <option value="">알뜨랑 여행자보험</option>
+                        <option value="">대한투어 대리점</option>
+                        <option value="">대한투어 멤버스</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div id="popup">
+        <div class="pop">
+            <h3>제목 : 전자증권 전환 대상 주주 보호 및 조치사항 안내</h3>
+            <p>2019. 09. 16일 [주식/사채 등의 전자등록에 관한 법률(이하 "전자증권법"]이 시행됨에 따라 당사의 전자증권 전환 대상 주권 권리자를 보호하기 위하여 전자증권법 부칙 제3조 3항에 근거하여 아래의 사항을 통지합니다.
+                <br> <br>
+                1. 전자증권법 시행일(2019. 09. 16)부터 주주(권리자)가 소유중인 실물증권(전환 대상 주권)은 효력을 잃게 됩니다.
+                <br> <br>
+                2.따라서, 주주(권리자)는 법 시행일 직전 영업일(2019. 09. 11)까지 증권회사 계좌(주식 등이 전자등록되는 전자등록계좌)를 통지하고 소유중인 실물증권(전환 대상 주권)을 제출해야 합니다.
+                </p>
+                <button class="close">확인</button>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
