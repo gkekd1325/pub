@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        section{
+            width: 100%; height: 100vh; background:moccasin;
+            position: relative;
+        }
+        section:nth-child(even){background: powderblue;}
+        .txt{
+            position: absolute;
+            top: 40%;
+            left: -10%;
+            font-size: 3rem;
+            transition: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <section>
+            <div class="txt first">내용</div>
+        </section>
+        <section>
+            <div class="txt sec">내용</div>
+        </section>
+        <section>
+            <div class="txt thir">내용</div>
+        </section>
+        <section>
+            <div class="txt four">내용</div>
+        </section>
+        <section>
+            <div class="txt five">내용</div>
+        </section>
+        <section>
+            <div class="txt six">내용</div>
+        </section>
+    </div>
+    <script>
+        window.addEventListener("wheel", ent);
+        window.addEventListener("load", ent);
+        var sec =document.querySelector(".sec");
+        var first=document.querySelector(".first");
+        var thir=document.querySelector(".thir");
+        var four=document.querySelector(".four");
+        var five=document.querySelector(".five");
+        var six=document.querySelector(".six");
+        function ent(e){
+            console.log(scrollY);
+            if(scrollY ==0){
+                first.style.transform = "translate(300px, 0)";
+            }
+            else{
+                first.style.transform = "translate(0,0)";
+            }
+            if(scrollY >=400){
+                sec.style.transform = "translate(300px, 0)";
+            }
+            else{
+                sec.style.transform = "translate(0,0)";
+            }
+            if(scrollY>=1400){
+                thir.style.transform = "translate(300px, 0)";
+            }            
+            else{
+                thir.style.transform = "translate(0,0)";
+            }
+            if(scrollY>=2600){
+                four.style.transform = "translate(300px, 0)";
+            }            
+            else{
+                four.style.transform = "translate(0,0)";
+            }
+            if(scrollY>=3600){
+                five.style.transform = "translate(300px, 0)";
+            }            
+            else{
+                five.style.transform = "translate(0,0)";
+            }
+            if(scrollY>=4600){
+                six.style.transform = "translate(300px, 0)";
+            }            
+            else{
+                six.style.transform = "translate(0,0)";
+            }
+        }        
+    </script>
+</body>
+</html>

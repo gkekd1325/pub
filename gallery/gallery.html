@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset = "UTF-8">
+<title> 함수 </title>
+<style>
+	*{margin: 0 auto;padding: 0;}
+	#galleryZone {
+		text-align: center; position:relative; width:380px; height:180px;
+		background: url("https://cdn.pixabay.com/photo/2022/02/20/20/09/field-7025238_960_720.jpg");
+		background-position: center center;
+		background-size: cover;
+	}	
+    .arrow{position: absolute; width:57px; height:57px; top:60px; opacity:.3;}
+    .left{left:20px;}
+    .right{left:310px;}
+    .arrow:hover{opacity:1;}	
+</style>
+
+</head>
+<body>
+	<div id="galleryZone">
+        
+        <div class="arrow left"><a href="#"><img src="left.png" alt="" ></a></div>
+        <div class="arrow right"><a href="#"><img src="right.png" alt="" ></a></div>				
+	</div>
+	<script>
+		var arr=[
+			"https://cdn.pixabay.com/photo/2022/02/20/20/09/field-7025238_960_720.jpg",
+			"https://cdn.pixabay.com/photo/2016/02/19/20/57/iceland-1211171_960_720.jpg",
+			"https://cdn.pixabay.com/photo/2020/05/11/17/19/countryside-5159278_960_720.jpg",
+			"https://cdn.pixabay.com/photo/2018/08/19/07/05/background-3616101_960_720.jpg"
+		]
+		var i=0;
+		var left =document.querySelector(".left");
+		var right=document.querySelector(".right");
+		var p=document.querySelector("#galleryZone");
+		right.addEventListener("click", slide);
+		left.addEventListener("click" ,reverse);
+		function slide(){
+			if(i==3){
+				i=-1; /* 더해서 0이 되어야 한다. */
+			}
+			i++;
+			p.style.background="url("+arr[i]+")";
+			p.style.backgroundPosition="center center";
+			p.style.backgroundSize="cover";
+		}
+		function reverse(){
+			if(i==0){
+				i=4;
+			}
+			i--;
+			p.style.background="url("+arr[i]+")";
+			p.style.backgroundPosition="center center";
+			p.style.backgroundSize="cover";
+		}
+		// var num=1;
+		// var p=document.querySelector("#photo");
+		// var body=document.querySelector("body");
+		// var left =document.querySelector(".left");
+		// var right=document.querySelector(".right");
+		// // var left = $(".left").click(levent); /* 제이쿼리 */
+		// left.addEventListener("click",lent);
+		// right.addEventListener("click", rent)
+		// function lent(){
+		// 	body.style.background="blue";
+		// 	if(num==1){
+		// 		num=6;
+		// 	}
+		// 	num=num-1;
+		// 	p.src=num+".jpg";
+		// }
+		// function rent(){
+		// 	body.style.background="cyan";						
+		// 	if(num==5){
+		// 		num=0;
+		// 	}
+		// 	num=num+1;
+		// 	p.src=num+".jpg";
+		// }
+		
+	</script>
+</body>
+</html>

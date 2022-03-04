@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        #slide{
+            width: 800px;
+            height: 300px;  
+            overflow: hidden;          
+        }
+        #slide ul{
+            display: flex;
+            width: 400%;           
+           
+        }
+        #slide li{
+            width: 800px;
+            height: 300px;
+        }
+        li{list-style: none;}
+        #slide li:nth-child(1){background: violet;}
+        #slide li:nth-child(2){background:turquoise;}
+        #slide li:nth-child(3){background:slateblue;}
+        #slide li:nth-child(4){background:violet;}
+    </style>
+</head>
+<body>
+    <div id="slide">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>1</li>
+        </ul>
+    </div>
+    <script>
+        
+        var a=document.querySelector("#slide ul");
+        a.addEventListener('wheel' ,slide);
+        var b=0;
+        function slide(e){
+            e.preventDefault(); /* 기본이벤트 발생금지 */
+            console.log(e.wheelDelta);
+            if(e.wheelDelta == -120){
+                console.log("아래맨");
+                // a.style.marginLeft="-200px";
+                b=b-50
+                a.style.marginLeft=b+"px";
+                if(b==-2400){
+                    b=0;
+                }
+            }
+            else{
+                console.log("위 맨");
+                // a.style.marginLeft="200px";
+                if(b==0){
+                    b=-2400;
+                }
+                b=b+50
+                a.style.marginLeft=b+"px";
+                
+            }
+        }
+    </script>
+</body>
+</html>

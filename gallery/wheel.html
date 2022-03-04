@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px; height: 100px;
+            background: lightcyan;
+            position: relative;
+            top:0; left:0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        var a=document.querySelector(".box");
+        window.addEventListener("wheel", eve);
+        var b=0;
+        function eve(e){
+            console.log(e.wheelDelta);
+            if(e.wheelDelta ==120){
+                a.innerHTML="위";
+                b=b-10;
+                a.style.top=b+"px";
+            }
+            if(e.wheelDelta ==-120){
+                a.innerHTML="아래";
+                b=b+10;
+                a.style.top=b+"px";
+            }
+        }        
+    </script>
+</body>
+</html>

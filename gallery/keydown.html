@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .box{
+      width:100px; height: 100px;
+      background:yellow;
+      position: relative;
+
+    }
+  </style>
+  <script src="js/jquery-1.12.4.js"></script>
+</head>
+<body>
+  <div class="box"></div>
+  <script>
+    var a=document.querySelector(".box");
+    window.addEventListener("keydown", change);
+    var b=0;
+    var c=0;
+
+    function change(e){   
+        console.log(e.keyCode);
+        if(e.keyCode ==38){
+            b=b-10;            
+            a.style.top= b+"px";
+            a.innerHTML ="위";
+        }
+        if(e.keyCode ==40){
+            b=b+10;
+            a.style.top=b+"px";
+            a.innerHTML ="아래";
+        }
+        if(e.keyCode ==37){
+            c=c-10;            
+            a.style.left= c+"px";
+            a.innerHTML ="왼";
+        }
+        if(e.keyCode ==39){
+            c=c+10;
+            a.style.left=c+"px";
+            a.innerHTML ="오른";
+        }
+        a.style.background="blue";
+    }
+  </script>
+</body>
+</html>
