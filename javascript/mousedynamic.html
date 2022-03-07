@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+       body{height:100vh;}
+   </style>
+</head>
+<body>
+
+    <script>
+        
+        document.addEventListener("mousemove", mm);
+        var m_top;
+        var m_left;
+
+        var bg = document.querySelector("body");
+        bg.addEventListener("click", box);        
+        var num=0;
+
+        function box(e){
+            num++;
+            var box = document.createElement("div");
+            box.style.width="100px";
+            box.style.height="100px";
+            box.style.border="1px #333 solid"            ;
+            box.style.background="#ffa";
+            box.style.position="absolute";
+            box.style.top=m_top+"px";
+            box.style.left=m_left+"px";
+            box.innerHTML=num+"내용";
+            if(e.target == bg){
+                bg.appendChild(box);                
+            }else{
+                bg.removeChild(e.target);
+            }            
+    
+        }
+
+        function mm(e){
+            m_top = e.clientY;
+            m_left = e.clientX;
+            console.log(m_top, m_left);
+        }
+
+       
+
+    </script>
+</body>
+</html>

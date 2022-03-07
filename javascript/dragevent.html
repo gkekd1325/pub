@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스로 움직여 보자!!</title>
+    <style>
+        *{margin:0; padding:0;}        
+        .box{width:100px; height:100px; border:1px #333 solid; position:absolute;}
+        body{height:200vh;}
+    </style>
+</head>
+<body>
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+
+    <script>
+
+        var mX;
+        var mY;
+        var targetObj; //반드시 아니면 팅김!!
+        document.addEventListener('mousedown', drag);
+
+        function drag(e){
+
+            e.preventDefault();
+            targetObj = e.target;
+            mX = getX(e.target)-e.clientX; // getX(선택한 객체의 X 값을 가져온다.), e.clientX(마우스로 누른 X값을 가져온다.)
+            mY = getY(e.target)-e.clientY;      
+            
+            document.onmousemove = mDrag;
+            document.onmouseup = sDrag;      
+            
+        }
+
+        function getX(X){
+            
+            var oX = window.pageXOffset + X.getBoundingClientRect().left; //객체 절대 좌표 구하기!!!
+            return oX;
+        }
+
+        function getY(Y){
+            
+            var oY = window.pageYOffset + Y.getBoundingClientRect().top; //객체 절대 좌표 구하기!!!
+            return oY;
+        }
+
+        function mDrag(e){
+
+            var goX = e.clientX + mX;
+            var goY = e.clientY + mY;
+            targetObj.style.left = goX +"px";
+            targetObj.style.top = goY +"px"; 
+            
+        }
+
+        function sDrag(e){
+            document.onmousemove = null;            
+        }
+    </script>
+</body>
+</html>

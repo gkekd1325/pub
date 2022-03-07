@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+       body{height:100vh;}
+       div{width: 100px; height: 100px; background: turquoise;}
+   </style>
+</head>
+<body>
+    <button>AllClear</button>
+    <script>
+        var bg =document.querySelector("body");
+        var btn=document.querySelector("button");
+        bg.addEventListener("click", createBox);
+        btn.addEventListener("click", AllClear);
+        var num=0;
+        function createBox(e){
+            console.log(111111);
+            var box=document.createElement("div");
+            box.innerHTML=++num;
+            box.style.width="100px";
+            box.style.border="1px #333 solid";
+            if(e.target == bg){
+                bg.appendChild(box);                
+            }else{
+                if(e.target != btn){
+                    bg.removeChild(e.target);
+                }
+                
+            }
+            
+        }
+        function AllClear(){
+            console.log(222);
+            bg.removeChild(box);
+        }
+        
+        // var bg = document.querySelector("body");
+        // bg.addEventListener("click", box);        
+        // var num=0;
+
+        // function box(e){
+        //     num++;
+        //     var box = document.createElement("div"); /* 태그를 생성해라 */
+        //     box.style.width="100px";
+        //     box.style.height="100px";
+        //     box.style.border="1px #333 solid";
+        //     box.style.background="#ffa";
+        //     box.innerHTML=num+"내용";
+        //     if(e.target == bg){
+        //         bg.appendChild(box);                
+        //     }else{
+        //         bg.removeChild(e.target);
+        //     }            
+    
+        // }
+       
+
+    </script>
+</body>
+</html>
