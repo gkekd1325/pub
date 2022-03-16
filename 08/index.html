@@ -6,15 +6,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>산업대학교</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-1.12.4.js"></script>
 </head>
 <body>
     <header>
-        <div id="header"></div>
+        <div id="header">
+            <div class="logo">
+                <a href="#"><img src="img/logo.png" alt="로고"></a>
+            </div>
+            
+            <nav>
+                <ul class="menu cf">
+                    <li>
+                        <a href="#">대학소개</a>
+                        <ul class="sub">
+                            <li><a href="#">총장인사말</a></li>
+                            <li><a href="#">학교소개</a></li>
+                            <li><a href="#">홍보관</a></li>
+                            <li><a href="#">캠퍼스안내</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">입학안내</a>
+                        <ul class="sub">
+                            <li><a href="#">수시모집</a></li>
+                            <li><a href="#">정시모집</a></li>
+                            <li><a href="#">편입학</a></li>
+                            <li><a href="#">재외국민</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">정보서비스</a>
+                        <ul class="sub">
+                            <li><a href="#">대학정보알림</a></li>
+                            <li><a href="#">정보공개</a></li>
+                            <li><a href="#">정보서비스안내</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">커뮤니티</a>
+                        <ul class="sub">
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">참여게시판</a></li>
+                            <li><a href="#">자료실</a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="nav_back"></div>
+        </div>
+        
     </header>
-    <div id="slide"></div>
-    <div id="content"></div>
+    <div id="slide">
+        <ul class="cf">
+            <li><a href="#"><img src="img/slide1.jpg" alt="슬라이드"></a></li>
+            <li><a href="#"><img src="img/slide2.jpg" alt="슬라이드"></a></li>
+            <li><a href="#"><img src="img/slide3.jpg" alt="슬라이드"></a></li>
+            <li><a href="#"><img src="img/slide1.jpg" alt="슬라이드"></a></li>
+        </ul>
+    </div>
+    <div id="content" class="cf">
+        <section>
+            <h3>공지사항</h3>
+            <hr>
+            <ul class="notice">
+                <li>
+                    <a href="#">
+                        <div class="list">구충제 이벤트	</div>
+                        <div class="date">2019-10-21</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="list">11월 집단상담 전체 일정	</div>
+                        <div class="date">2019-10-17</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="list">"산업대 교육콘서트” 노래영상 콘텐츠 제작 공모	</div>
+                        <div class="date">2019-10-08</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="list">인권PT 교육 신청, 손난로 이벤트	</div>
+                        <div class="date">2019-10-08</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="list">자살예방 생명지킴이 양성교육	</div>
+                        <div class="date">2019-10-24</div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h3>갤러리</h3>
+            <hr>
+            <ul class="gallery cf">
+                <li><a href="#none"><img src="img/gallery01.jpg" alt="갤러리"></a></li>
+                <li><a href="#none"><img src="img/gallery02.jpg" alt="갤러리"></a></li>
+                <li><a href="#none"><img src="img/gallery03.jpg" alt="갤러리"></a></li>
+            </ul>
+        </section>
+        <section class="cf">
+            <h3>배너</h3>
+            <hr>
+            <div class="banner">
+                <a href="#none"><img src="img/ai.png" alt="배너"></a>
+            </div>
+            <div class="text">과제 자료를 어떻게 찾지?
+                "과제물 큐레이션 서비스 오픈"
+                인공지능 사서가 최적의 도서를 추천!</div>
+            
+        </section>
+    </div>
     <footer>
-        <div id="footer"></div>
+        <div id="footer">
+            <div class="left">
+                <div class="fmenu">
+                    <a href="#none">홈페이지이용안내</a>|
+                    <a href="#none">전화번호안내</a>|
+                    <a href="#none">채용안내</a>|
+                    <a href="#none">외부연구과제공모</a>|
+                    <a href="#none">입찰정보대학알리미(대학정보공시)</a>
+                </div>
+                <div class="copyright">
+                    (03087) 서울시 종로구 대학로 86 산업대학교 / 안내전화 : 1577-9995 <br>
+                    Copyrightⓒ2016 Korea National Open University. All Rights Reserved.
+                </div>
+            </div>
+            <div class="sns">
+                <select name="family" id="family">
+                    <option value="option">대학교육개발단</option>
+                    <option value="option">산학협력단</option>
+                    <option value="option">LINC+사업단</option>
+                    <option value="option">생활협동조합</option>
+                    <option value="option">생활관</option>
+                </select>
+            </div>
+        </div>
     </footer>
+    <div id="popup">
+        <div class="pop">
+            <h3>제목 : 구충제 이벤트</h3>
+            <p>안녕하세요~ 교내 보건진료실입니다. <br>
+                사회문화적 변화로 인해 요즘 외식을 많이 하거나 단체급식을 하는 사람들, 애완동물을 키우거나 유기농 야채를 먹는 사람들이 늘면서 기생충 감염률이 서서히 높아지고 있는 실정입니다.
+                <br><br>
+                이와 관련하여 우리 대학 교직원 및 학생들의 기생충 감염을 예방하여 건강한 직장 및 학교생활을 유지할 수 있도록 10/22(화)부터 구충제를 나눠드리려고 합니다. (400개 한정수량) 많이 참여해주시고, 자세한 사항은 학내 게시판을 참고 바랍니다.
+                </p>
+                <button class="close">확인</button>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
 </body>
 </html>
