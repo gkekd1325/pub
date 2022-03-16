@@ -1,0 +1,229 @@
+@charset "utf-8";
+
+*{margin: 0; padding: 0;}
+.cf:after{content: ""; display: block; clear: both;}
+
+li{list-style: none;}
+a{
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
+img{display: block; border: 0;}
+body{color: #333;}
+
+#wrap{
+    width: 1000px;
+    height: 650px;    
+}
+#left{
+    width: 200px;
+    height: 650px;
+    background: skyblue;
+    float: left;
+}
+#right{
+    width: 800px;
+    height: 650px;
+    background: turquoise;
+    float: left;
+}
+.logo{
+    width: 200px;
+    padding: 30px 0;
+    
+}
+nav{
+    width: 200px;
+    height: 550px;
+    background: skyblue;
+    position: relative;
+}
+.menu{
+    position: relative;
+    top: 50px;
+    left: 25px;
+}
+.menu li{
+    width: 150px;
+}
+.menu a{
+    background: dodgerblue;
+    line-height: 40px;
+    text-align: center;
+    transition: 0.3s;
+}
+.sub{display: none;}
+/* .menu li:hover .sub{
+    display: block;
+} */
+.menu li:hover >a{
+    background: yellow;
+}
+.sub a{
+    background:royalblue;
+}
+/* 추가사항 */
+.menu>li{ 
+    border: 1px black solid;
+    border-bottom: 0;
+}                       /* > 붙이면 서브 테두리는 없어짐 */
+.menu>li:last-child{
+    border: 1px black solid;
+}
+.menu{left: 24px;}
+
+#slide{
+    height: 350px;
+    overflow: hidden;
+    background: white;
+}
+#slide ul{
+    animation: fade 9s infinite;
+}
+@keyframes fade {
+    0%{margin-top: 0; opacity: 0;}
+    5%{margin-top: 0; opacity: 1;}
+    28%{margin-top: 0; opacity: 1;}
+    33%{margin-top: 0; opacity: 0;}
+    33.3333%{margin-top: -350px; opacity: 0;}
+    38%{margin-top: -350px; opacity: 1;}
+    61%{margin-top: -350px; opacity: 1;}
+    66%{margin-top: -350px; opacity: 0;}
+    66.6666%{margin-top: -700px; opacity: 0;}
+    71%{margin-top: -700px; opacity: 1;}
+    95%{margin-top: -700px; opacity: 1;}
+    100%{margin-top: -700px; opacity: 0;}
+}
+#content{
+    width: 800px;
+    height: 200px;
+}
+section{
+    padding: 10px;
+    width: 240px;
+    height: 180px;
+    background: aquamarine;
+    float: left;
+    position: relative;
+}
+section:nth-child(1){
+    width: 260px;
+}
+.tap li{width: 120px; float: left;}
+.tap a{
+    background: lightblue;
+    line-height: 30px;
+    text-align: center;
+}
+.tap a.on{
+    background: steelblue;
+}
+.notice a{
+    height: 30px;
+    line-height: 30px;
+    background: steelblue;
+    transition: 0.3s;
+    padding: 0 5px;
+}
+.notice a:hover{background: gold;}
+.list{
+    width: 130px;
+    float: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.date{
+    width: 120px;
+    float: left;
+    text-align: right;
+}
+.gallery{
+    background: steelblue;
+    display: none;
+}
+.gallery img{width: 70px; height: 70px;}
+.gallery li{float: left;}
+.gallery a{
+    padding: 20px 0 20px 10px; 
+    background: steelblue;
+    transition: 0.3s;
+}
+.gallery a:hover{opacity: .6;}
+
+.banner a{position: relative; left: 70px; transition: 0.3s;}
+.banner a:hover{opacity: .6;}
+.text{font-size: 15px;}
+.banner img{width: 100px; height: 100px;}
+
+.quick{position: absolute; top: 30px;}
+.quick img{width: 60px; height: 60px;}
+.quick a{padding: 10px; transition: 0.3s;}
+.quick a:hover{opacity: .6;}
+.quick li{
+    float: left; 
+    text-align: center;
+}
+.quick h3{ font-size: 15px;}
+
+footer{height: 100px;}
+.fright{
+    width: 600px;
+    float: left;
+    /* position: relative; */
+}
+.flogo{
+    width: 200px;
+    padding: 30px 0;
+    float: left;
+}
+.fmenu{
+    width: 600px;
+    float: left;
+    /* display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    left: 50px; */
+    color:slateblue;
+    text-align: center;
+}
+.fmenu a{
+    line-height: 30px;
+    display: inline;   
+    font-size: 14px; 
+}
+.fmenu a:hover{text-decoration: underline;}
+.copyright{
+    font-size: 12px;
+    text-align: center;
+}
+#popup{
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, .6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.pop{
+    width: 600px;
+    height: 400px;
+    background: white;
+    border: 3px blue solid;
+    border-radius: 15px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 0 10px;
+}
+.pop h3{line-height: 40px;}
+.pop p{
+    text-align: left; 
+    height: 290px;
+    line-height: 25px;
+}
+.close{width: 120px; height: 40px;}
