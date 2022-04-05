@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset = "UTF-8">
+<title> 갤러리 슬라이드 </title>
+<style>
+	*{margin: 0 auto;padding: 0;}
+	li{list-style: none;}
+	a{text-decoration: none; display: block; color:inherit;}
+	/* #galleryZone {text-align: center; position:relative; width:380px; height:180px;
+		overflow: hidden;
+	}
+	#galleryZone ul img{width:380px;}
+	#galleryZone ul{width:600%; display:flex; } */
+	#slide{
+    	width: 100%;
+    	/* margin: 0 auto; */
+    	overflow: hidden;
+    	padding-bottom: 10%;
+	}
+	#slide li{width: 100%;}
+	#slide img{width: 100%;}
+	#slide ul{
+	    width: 600%;
+	    display: flex;
+	    /* animation: slide 20s infinite; */
+	}
+    .arrow{position: absolute; width:57px; height:57px; top:60px; opacity:0;
+		transition:.6s;
+	}
+    .left{left:20px;}
+    .right{left:310px;}    
+
+</style>
+
+</head>
+<body>
+	<div id="slide">
+		<ul>
+			<li><a href="#none"><img src="gall_img/1.jpg" alt="그림1"></a></li>
+			<li><a href="#none"><img src="gall_img/2.jpg" alt="그림2"></a></li>
+			<li><a href="#none"><img src="gall_img/3.jpg" alt="그림3"></a></li>
+			<li><a href="#none"><img src="gall_img/4.jpg" alt="그림4"></a></li>
+			<li><a href="#none"><img src="gall_img/5.jpg" alt="그림5"></a></li>
+			<li><a href="#none"><img src="gall_img/1.jpg" alt="그림1"></a></li>
+		</ul>        
+        <div class="arrow left"><a href="#"><img src="img/left.png" alt="" onclick="left()"></a></div>
+        <div class="arrow right"><a href="#"><img src="img/right.png" alt="" onclick="go()"></a></div>				
+	</div>
+	<script>
+		var imgWidth = document.querySelector("#slide img").width;
+		var gallMove = document.querySelector("#slide ul");
+		var gallZone = document.querySelector("#slide");
+		var arrow = document.querySelectorAll(".arrow");
+
+		window.addEventListener('load',start);
+		gallZone.addEventListener('mouseover',stop);
+		gallZone.addEventListener('mouseout',start);
+
+		var interval;
+		var aniStartPoint;
+		var aniEndPoint;
+		var count = 0;
+		var slideon = "on";
+
+		function start(){ /* 문서 실행 시 */
+			interval = setInterval(go, 2000);
+			arrow[0].style.opacity = "0";
+			arrow[1].style.opacity = "0";
+		}
+
+		function go(){ /* 오른 클릭 시*/
+			if(slideon == "on"){
+
+				slideon = "off";
+
+				if(count == 5) count = 0;
+
+				aniStartPoint = -imgWidth * count; /* 전역변수=이미지넓이*카운트 */
+				count++;
+				aniEndPoint = -imgWidth * count;
+
+				goAni();
+			}
+		}
+
+		function left(){ /* 왼쪽 클릭 시 */
+			if(slideon == "on"){
+
+				slideon = "off";
+
+				if(count == 0) count = 5;
+
+				aniStartPoint = -imgWidth * count;
+				count--;
+				aniEndPoint = -imgWidth * count;
+
+				goAni();
+			}
+		}
+
+		function goAni(){
+			var ani = gallMove.animate([ /* UL의 애니메이션 */
+				{
+					transform:"translateX(" + aniStartPoint + "px)"
+				},{
+					transform:"translateX(" + aniEndPoint + "px)"
+				}
+			],1000);
+
+			ani.addEventListener('finish',function(){
+				gallMove.style.transform = "translateX(" + aniEndPoint + "px)";
+				slideon = "on";
+			});
+		}
+
+		function stop(){ /* 호버 시 */
+			clearInterval(interval);
+			arrow[0].style.opacity = "0.3";
+			arrow[1].style.opacity = "0.3";
+		}
+	</script>
+</body>
+</html>
