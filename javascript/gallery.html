@@ -38,23 +38,35 @@
 		right.addEventListener("click", slide);
 		left.addEventListener("click" ,reverse);
 		function slide(){
+			// ani();
 			if(i==3){
 				i=-1; /* 더해서 0이 되어야 한다. */
 			}
 			i++;
+			p.style.transition="0.6s";
+			p.style.opacity="0";
 			p.style.background="url("+arr[i]+")";
+			p.style.opacity="1";
 			p.style.backgroundPosition="center center";
 			p.style.backgroundSize="cover";
+			
 		}
 		function reverse(){
 			if(i==0){
 				i=4;
 			}
 			i--;
+			p.style.transition="0.6s";
 			p.style.background="url("+arr[i]+")";
+			p.style.opacity="1";
 			p.style.backgroundPosition="center center";
 			p.style.backgroundSize="cover";
 		}
+		// function ani(){
+		// 	p.animate({opacity:.6},1000);
+		// }
+
+
 		// var num=1;
 		// var p=document.querySelector("#photo");
 		// var body=document.querySelector("body");
